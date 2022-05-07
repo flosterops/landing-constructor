@@ -14,23 +14,21 @@ const StyledPage = styled(Column)<ILayout>`
 
 interface IApplication extends AppProps {}
 
-const Application = ({ Component, pageProps }: IApplication): ReactElement => {
-    return (
-        <>
-            <GlobalStyle />
-            <StyledPage>
-                <Component {...pageProps} />
-            </StyledPage>
-        </>
-    );
-};
+const Application = ({ Component, pageProps }: IApplication): ReactElement => (
+  <>
+    <GlobalStyle />
+    <StyledPage>
+      <Component {...pageProps} />
+    </StyledPage>
+  </>
+);
 
 interface InitialProps {
-    pageProps: any;
+  pageProps: any;
 }
 
-Application.getInitialProps = async (appContext: AppContextType<Router>): Promise<InitialProps> => {
-    return { ...(await App.getInitialProps(appContext)) };
-};
+Application.getInitialProps = async (appContext: AppContextType<Router>): Promise<InitialProps> => ({
+  ...(await App.getInitialProps(appContext)),
+});
 
 export default appWithTranslation(Application);

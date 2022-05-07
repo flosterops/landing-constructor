@@ -1,3 +1,3 @@
 export enum IconTypes {
-    primary = 'primary',
+  primary = 'primary',
 }

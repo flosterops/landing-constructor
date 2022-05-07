@@ -6,9 +6,9 @@ import { AlignItemsTypes } from 'models/layout.model';
 import { maxWidth } from 'constants/width.constant';
 
 export interface IContainer extends ILayout {
-    children: ReactNode | ReactNodeArray;
-    color?: string;
-    padding?: string;
+  children: ReactNode | ReactNodeArray;
+  color?: string;
+  padding?: string;
 }
 
 const StyledContainer = styled(Column)<ILayout>`
@@ -16,23 +16,21 @@ const StyledContainer = styled(Column)<ILayout>`
 `;
 
 const Container: FunctionComponent<IContainer> = ({
-    children,
-    color = '',
-    padding = '',
-    ...props
-}: IContainer): ReactElement => {
-    return (
-        <Column bg={color} tagName={LayoutTags.section} {...props} ai={AlignItemsTypes.center}>
-            <StyledContainer
-                componentHeight={props.componentHeight}
-                bg={color}
-                tagName={LayoutTags.section}
-                padding={padding}
-            >
-                {children}
-            </StyledContainer>
-        </Column>
-    );
-};
+  children,
+  color = '',
+  padding = '',
+  ...props
+}: IContainer): ReactElement => (
+  <Column bg={color} tagName={LayoutTags.section} {...props} ai={AlignItemsTypes.center}>
+    <StyledContainer
+      componentHeight={props.componentHeight}
+      bg={color}
+      tagName={LayoutTags.section}
+      padding={padding}
+    >
+      {children}
+    </StyledContainer>
+  </Column>
+);
 
 export { Container };

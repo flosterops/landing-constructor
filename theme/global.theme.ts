@@ -2,204 +2,204 @@ import { createGlobalStyle } from 'styled-components';
 import { colors } from './colors.theme';
 
 export const globalStyles = {
-    global: {
-        borderRadius: 0,
-        componentHeight: 50,
-    },
-    fonts: {
-        default: `
+  global: {
+    borderRadius:    0,
+    componentHeight: 50,
+  },
+  fonts: {
+    default: `
             font-family: "Motiva-sans", sans-serif;
        `,
-    },
+  },
 
-    jc: {
-        flexStart: `
+  jc: {
+    flexStart: `
             justify-content: flex-start;
         `,
-        center: `
+    center: `
             justify-content: center;
         `,
-        stretch: `
+    stretch: `
             justify-content: stretch;
         `,
-        flexEnd: `
+    flexEnd: `
             justify-content: flex-end;
         `,
-        spaceBetween: `
+    spaceBetween: `
             justify-content: space-between;
         `,
-        spaceAround: `
+    spaceAround: `
             justify-content: space-around;
         `,
-        default: `
+    default: `
             justify-content: flex-start;
         `,
-    },
+  },
 
-    ai: {
-        flexStart: `
+  ai: {
+    flexStart: `
             align-items: flex-start;
         `,
-        center: `
+    center: `
             align-items: center;
         `,
-        stretch: `
+    stretch: `
             align-items: stretch;
         `,
-        flexEnd: `
+    flexEnd: `
             align-items: flex-end;
         `,
-        spaceBetween: `
+    spaceBetween: `
             align-items: space-between;
         `,
-        spaceAround: `
+    spaceAround: `
             align-items: space-around;
         `,
-        default: `
+    default: `
             align-items: flex-start;
         `,
-    },
+  },
 
-    textAlign: {
-        center: `
+  textAlign: {
+    center: `
             text-align: center;
         `,
-        left: `
+    left: `
             text-align: left;
         `,
-        right: `
+    right: `
             text-align: right;
         `,
-        default: `
+    default: `
             text-align: left;
         `,
-    },
+  },
 
-    direction: {
-        row: `
+  direction: {
+    row: `
             flex-direction: row;
         `,
-        column: `
+    column: `
             flex-direction: column;
         `,
-        default: `
+    default: `
             flex-direction: column;
         `,
-    },
+  },
 
-    position: {
-        left: `
+  position: {
+    left: `
             justify-content: left;
         `,
-        right: `
+    right: `
             justify-content: right;
         `,
-        center: `
+    center: `
             justify-content: center;
         `,
-        default: `
+    default: `
             justify-content: left;
         `,
-    },
+  },
 
-    componentSizes: {
-        s: `
+  componentSizes: {
+    s: `
             width: 120px;
         `,
-        m: `
+    m: `
             width: 240px;
         `,
-        l: `
+    l: `
             width: 320px;
         `,
-        xl: `
+    xl: `
             width: 420px;
         `,
-        full: `
+    full: `
             width: 100%;
         `,
-        auto: `
+    auto: `
             width: auto;
         `,
-        default: `
+    default: `
             width: 180px;
         `,
-    },
+  },
 
-    weight: {
-        400: `
+  weight: {
+    400: `
             font-weight: 400;
         `,
-        500: `
+    500: `
             font-weight: 500;
         `,
-        600: `
+    600: `
             font-weight: 600;
         `,
-        700: `
+    700: `
             font-weight: 700;
         `,
-        800: `
+    800: `
             font-weight: 800;
         `,
-        default: `
+    default: `
             font-weight: 400;
         `,
-    },
+  },
 
-    ln: {
-        xxs: `
+  ln: {
+    xxs: `
             line-height: 10px;
         `,
-        xs: `
+    xs: `
             line-height: 12px;
         `,
-        s: `
+    s: `
             line-height: 14px;
         `,
-        m: `
+    m: `
             line-height: 16px;
         `,
-        l: `
+    l: `
             line-height: 24px;
         `,
-        xl: `
+    xl: `
             line-height: 36px;
         `,
-        xxl: `
+    xxl: `
             line-height: 48px;
         `,
-        default: `
+    default: `
             line-height: 16px;
         `,
-    },
+  },
 
-    fontSizes: {
-        xxs: `
+  fontSizes: {
+    xxs: `
             font-size: 10px;
         `,
-        xs: `
+    xs: `
             font-size: 12px;
         `,
-        s: `
+    s: `
             font-size: 14px;
         `,
-        m: `
+    m: `
             font-size: 16px;
         `,
-        l: `
+    l: `
             font-size: 24px;
         `,
-        xl: `
+    xl: `
             font-size: 36px;
         `,
-        xxl: `
+    xxl: `
             font-size: 48px;
         `,
-        default: `
+    default: `
             font-size: 16px;
         `,
-    },
+  },
 };
 
 export const GlobalStyle = createGlobalStyle`

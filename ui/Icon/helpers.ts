@@ -1,3 +1,3 @@
 export const Icons = {
-    primary: 'primary',
+  primary: 'primary',
 };

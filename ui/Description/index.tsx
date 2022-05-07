@@ -20,37 +20,35 @@ const StyledDescription = styled.p<IDescription>`
 `;
 
 export interface IDescription extends ISpaceTypes {
-    position?: PositionTypes;
-    color?: string;
-    fontSize?: FontSizeTypes;
-    uppercase?: boolean;
-    textAlign?: AlignTextTypes;
-    weight?: WeightTypes;
-    children: ReactNode | ReactNodeArray;
-    onClick?: (...args: any) => any;
+  position?: PositionTypes;
+  color?: string;
+  fontSize?: FontSizeTypes;
+  uppercase?: boolean;
+  textAlign?: AlignTextTypes;
+  weight?: WeightTypes;
+  children: ReactNode | ReactNodeArray;
+  onClick?: (...args: any) => any;
 }
 
 const Description: React.FC<IDescription> = ({
-    children,
-    color = colors.textPrimary,
-    fontSize = FontSizeTypes.s,
-    weight = WeightTypes.w500,
-    position = PositionTypes.default,
-    textAlign = AlignTextTypes.default,
-    ...props
-}: IDescription): ReactElement => {
-    return (
-        <StyledDescription
-            color={color}
-            fontSize={fontSize}
-            position={position}
-            textAlign={textAlign}
-            weight={weight}
-            {...props}
-        >
-            {children}
-        </StyledDescription>
-    );
-};
+  children,
+  color = colors.textPrimary,
+  fontSize = FontSizeTypes.s,
+  weight = WeightTypes.w500,
+  position = PositionTypes.default,
+  textAlign = AlignTextTypes.default,
+  ...props
+}: IDescription): ReactElement => (
+  <StyledDescription
+    color={color}
+    fontSize={fontSize}
+    position={position}
+    textAlign={textAlign}
+    weight={weight}
+    {...props}
+  >
+    {children}
+  </StyledDescription>
+);
 
 export { Description };

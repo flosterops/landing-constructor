@@ -6,23 +6,23 @@ import { colors } from 'theme/colors.theme';
 import { globalStyles } from 'theme/global.theme';
 
 export enum TitleTags {
-    h1 = 'h1',
-    h2 = 'h2',
-    h3 = 'h3',
-    h4 = 'h4',
-    h5 = 'h5',
-    h6 = 'h6',
-    default = 'h2',
+  h1 = 'h1',
+  h2 = 'h2',
+  h3 = 'h3',
+  h4 = 'h4',
+  h5 = 'h5',
+  h6 = 'h6',
+  default = 'h2',
 }
 
 export interface ITitle extends ISpaceTypes {
-    position?: PositionTypes;
-    color?: string;
-    fontSize?: FontSizeTypes;
-    uppercase?: boolean;
-    weight?: WeightTypes;
-    children: ReactNode | ReactNodeArray;
-    tagName: TitleTags;
+  position?: PositionTypes;
+  color?: string;
+  fontSize?: FontSizeTypes;
+  uppercase?: boolean;
+  weight?: WeightTypes;
+  children: ReactNode | ReactNodeArray;
+  tagName: TitleTags;
 }
 
 const StyledTitle = styled.h3<ITitle>`
@@ -38,19 +38,17 @@ const StyledTitle = styled.h3<ITitle>`
 `;
 
 const Title: React.FC<ITitle> = ({
-    children,
-    color = colors.textPrimary,
-    fontSize = FontSizeTypes.default,
-    weight = WeightTypes.default,
-    position,
-    tagName = TitleTags.default,
-    ...props
-}: ITitle): ReactElement => {
-    return (
-        <StyledTitle color={color} fontSize={fontSize} weight={weight} position={position} as={tagName} {...props}>
-            {children}
-        </StyledTitle>
-    );
-};
+  children,
+  color = colors.textPrimary,
+  fontSize = FontSizeTypes.default,
+  weight = WeightTypes.default,
+  position,
+  tagName = TitleTags.default,
+  ...props
+}: ITitle): ReactElement => (
+  <StyledTitle color={color} fontSize={fontSize} weight={weight} position={position} as={tagName} {...props}>
+    {children}
+  </StyledTitle>
+);
 
 export { Title };

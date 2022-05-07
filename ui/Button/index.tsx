@@ -8,56 +8,56 @@ import { BreakPoints, media } from 'theme/responsive.theme';
 import { colors } from 'theme/colors.theme';
 
 export enum IButtonVariant {
-    text = 'text',
-    outlined = 'outlined',
-    contained = 'contained',
+  text = 'text',
+  outlined = 'outlined',
+  contained = 'contained',
 }
 
 export interface IButton extends ISpaceTypes {
-    color?: string;
-    width?: string;
-    height?: string;
-    componentSize?: ComponentSizesTypes | string;
-    onClick?: (...args: any) => void;
-    disabled?: boolean;
-    type?: 'submit' | 'button';
-    variant?: IButtonVariant;
-    padding?: string;
-    ref?: any;
-    children: ReactNode | ReactNodeArray;
-    tagName?: 'a' | 'button';
-    href?: string;
-    animationType?: EButtonAnimationTypes;
+  color?: string;
+  width?: string;
+  height?: string;
+  componentSize?: ComponentSizesTypes | string;
+  onClick?: (...args: any) => void;
+  disabled?: boolean;
+  type?: 'submit' | 'button';
+  variant?: IButtonVariant;
+  padding?: string;
+  ref?: any;
+  children: ReactNode | ReactNodeArray;
+  tagName?: 'a' | 'button';
+  href?: string;
+  animationType?: EButtonAnimationTypes;
 }
 
 export enum EButtonAnimationTypes {
-    primary = 'primary',
-    default = 'default',
-    topSlide = 'topSlide',
+  primary = 'primary',
+  default = 'default',
+  topSlide = 'topSlide',
 }
 
-function getButtonColor(props: IButton): string {
-    const { color, variant } = props;
-    switch (variant) {
-        case IButtonVariant.contained:
-            return `
+function getButtonColor (props: IButton): string {
+  const { color, variant } = props;
+  switch (variant) {
+    case IButtonVariant.contained:
+      return `
                 background-color: ${color};
                 color: ${colors.textPrimary};
             `;
-        case IButtonVariant.outlined:
-            return `
+    case IButtonVariant.outlined:
+      return `
                 border: 1px solid ${color};
                 color: ${color};
                 background-color: transparent;
             `;
-        case IButtonVariant.text:
-            return `
+    case IButtonVariant.text:
+      return `
                 color: ${color};
                 background-color: transparent;
             `;
-        default:
-            return '';
-    }
+    default:
+      return '';
+  }
 }
 
 const StyledButton = styled.button<IButton>`
@@ -84,14 +84,14 @@ const StyledButton = styled.button<IButton>`
     ${(props: IButton): string => getButtonColor(props)};
 
     ${(props: IButton): any =>
-        props.disabled &&
-        css`
+    props.disabled
+        && css`
             background: ${colors.disabled}};
             color: ${colors.textDisabled};
         `}
     ${(props: IButton): any =>
-        props.variant === 'text' &&
-        css`
+    props.variant === 'text'
+        && css`
             font-size: 12px;
             text-transform: none;
         `}
@@ -107,73 +107,69 @@ const StyledRipples = styled(Ripples)`
 `;
 
 const ButtonComponent: React.FC<IButton> = ({
-    type,
-    color,
-    onClick,
-    disabled,
-    variant,
-    padding,
-    children,
-    height,
-    width,
-    href,
-    tagName = 'button',
-}: IButton): ReactElement => {
-    return (
-        <StyledButton
-            as={tagName}
-            href={href}
-            type={type}
-            color={color}
-            onClick={onClick}
-            disabled={disabled}
-            padding={padding}
-            variant={variant}
-            height={height}
-            width={width}
-        >
-            {children}
-        </StyledButton>
-    );
-};
+  type,
+  color,
+  onClick,
+  disabled,
+  variant,
+  padding,
+  children,
+  height,
+  width,
+  href,
+  tagName = 'button',
+}: IButton): ReactElement => (
+  <StyledButton
+    as={tagName}
+    href={href}
+    type={type}
+    color={color}
+    onClick={onClick}
+    disabled={disabled}
+    padding={padding}
+    variant={variant}
+    height={height}
+    width={width}
+  >
+    {children}
+  </StyledButton>
+);
 
 const Button: React.FC<IButton> = ({
-    children,
-    type = 'button',
-    color = 'main',
-    componentSize = ComponentSizesTypes.default,
-    onClick,
-    disabled,
-    variant = IButtonVariant.contained,
-    padding,
-    height,
-    width,
-    tagName,
-    href,
-    animationType,
-    ...props
-}: IButton): ReactElement => {
-    return (
-        <StyledButtonWrapper componentSize={componentSize} {...props}>
-            <StyledRipples color="rgba(255,255,255,0.4)">
-                <ButtonComponent
-                    tagName={tagName}
-                    href={href}
-                    type={type}
-                    color={color}
-                    onClick={onClick}
-                    disabled={disabled}
-                    padding={padding}
-                    variant={variant}
-                    height={height}
-                    width={width}
-                    animationType={animationType}
-                >
-                    {children}
-                </ButtonComponent>
-            </StyledRipples>
-        </StyledButtonWrapper>
-    );
-};
+  children,
+  type = 'button',
+  color = 'main',
+  componentSize = ComponentSizesTypes.default,
+  onClick,
+  disabled,
+  variant = IButtonVariant.contained,
+  padding,
+  height,
+  width,
+  tagName,
+  href,
+  animationType,
+  ...props
+}: IButton): ReactElement => (
+  <StyledButtonWrapper componentSize={componentSize} {...props}>
+    <StyledRipples color='rgba(255,255,255,0.4)'>
+      <ButtonComponent
+        tagName={tagName}
+        href={href}
+        type={type}
+        color={color}
+        onClick={onClick}
+        disabled={disabled}
+        padding={padding}
+        variant={variant}
+        height={height}
+        width={width}
+        animationType={animationType}
+      >
+        {children}
+      </ButtonComponent>
+    </StyledRipples>
+  </StyledButtonWrapper>
+);
 
 export { Button };

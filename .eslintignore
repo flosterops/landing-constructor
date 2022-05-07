@@ -1,0 +1,6 @@
+/root/next.config.js
+/root/next.env.d.ts
+/root/next-i18next.config.js
+/root/public/*
+/root/node_modules/*
+/root/.next/*
